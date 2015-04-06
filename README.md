@@ -8,6 +8,11 @@
 sudo sh tomarkdown2.sh http://www.example.com ./test/
 ```
 
+- 把无图片的html直接转换成markdown格式的方法
+```
+sudo sh tomarkdown2.sh html ./test/
+```
+
 - 把从chrome下载的html文件直接转换成markdown格式的方法
 ```
 sudo sh tomarkdown.sh htmldir markdowndir
