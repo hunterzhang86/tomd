@@ -215,7 +215,12 @@ if __name__ == "__main__":
     #url = 'http://ballpo.com/detail/182560.html'
 
     html_folder = sys.argv[-1]
+
     url = sys.argv[-2]
+
+    if url.find("http") == -1:
+        print "将直接解析目标文件夹下的html文件"
+        sys.exit()
 
     te = BodyExtractor(url, html_folder)
     te.execute()
