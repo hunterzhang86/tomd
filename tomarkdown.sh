@@ -18,7 +18,10 @@ do
 done
 
 cp -R $1/photo $1/*.md /Users/apple/Documents/mynote/$2
-rm -Rf $1/photo
+
+if $1 != $2
+	rm -Rf $1/photo
+fi
 
 rm -Rf $1/*files
 rm $1/*.html

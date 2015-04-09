@@ -32,10 +32,17 @@ class BodyExtractor(object):
         self.html_title = ''
         self.margin = 30  #从text的margin长度开始去匹配text_a_p，数值越大匹配越精确，效率越差
 
-    def execute(self):
+    def execute_y(self):
         self._pre_process()
         self._extract()
         self._post_process()
+        self.dumphtml()
+        self.dumpimages()
+
+    def execute_n(self):
+        self._pre_process()
+        self._post_process()
+        self.body = self.html_text
         self.dumphtml()
         self.dumpimages()
 
@@ -215,17 +222,22 @@ if __name__ == "__main__":
     #url = 'http://ballpo.com/detail/182560.html'
 
     html_folder = sys.argv[-1]
-
     url = sys.argv[-2]
+    parameters = sys.argv[-3]
 
-    if url.find("http") == -1:
-        print "将直接解析目标文件夹下的html文件"
-        sys.exit()
+    if parameters == 'y':
+        print "抽取正文"
+        te = BodyExtractor(url, html_folder)
+        te.execute_y()
 
-    te = BodyExtractor(url, html_folder)
-    te.execute()
+    elif parameters == 'n':
+        print "不抽取正文"
+        te = BodyExtractor(url, html_folder)
+        te.execute_n()
 
     print te.body
+
+    sys.exit()
     #print te.img
 
 
