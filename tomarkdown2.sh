@@ -1,4 +1,4 @@
-# $1、$2分别是 url 和 你要存放笔记的文件夹 ， 形如: sudo sh tomarkdown2.sh http://www.example.com ../test/
+# $1、$2 、$3分别是 是否抽取正文 、 url链接 、你要存放笔记的文件夹 ， 形如: sudo sh tomarkdown2.sh http://www.example.com ../test/
 
 sudo python htm_body_extractor.py $1 $2 $3
 
