@@ -30,7 +30,7 @@ class BodyExtractor(object):
         self.plain_text = ''
         self.html_text = ''
         self.html_title = ''
-        self.margin = 30  #从text的margin长度开始去匹配text_a_p，数值越大匹配越精确，效率越差
+        self.margin = 50  #从text的margin长度开始去匹配text_a_p，数值越大匹配越精确，效率越差
 
     def execute_y(self):
         self._pre_process()
